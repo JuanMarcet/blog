@@ -1,0 +1,16 @@
+# Dependencias de paquetes
+/node_modules
+
+# Archivos de logs y temporales
+/npm-debug.log
+
+# Archivos de Vercel
+.vercel
+
+# Variables de entorno (¡Muy importante por seguridad!)
+.env
+.env.local
+
+# Archivos de sistemas operativos (Windows/Mac)
+.DS_Store
+Thumbs.db
