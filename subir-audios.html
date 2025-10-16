@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Subir Canción al Blog 🎤</title>
+</head>
+<body>
+<h2>🎶 Subir canción cantada por el equipo</h2>
+
+<form id="audioForm">
+    <label>Tu nombre (quien sube el archivo):</label><br>
+    <input type="text" id="author" placeholder="Ej: Juanito" required><br><br>
+
+    <label>Título de la canción:</label><br>
+    <input type="text" id="title" placeholder="Ej: Let it be (versión divertida)" required><br><br>
+
+    <label>Iniciales del cantante:</label><br>
+    <input type="text" id="singer" placeholder="Ej: AZ" maxlength="3" required><br><br>
+
+    <label>Archivo de audio (.ogg, .mp3, .m4a):</label><br>
+    <input type="file" id="audioFile" accept="audio/*" required><br><br>
+
+    <button type="submit">Subir Canción</button>
+</form>
+
+<p id="status"></p>
+<audio id="player" controls style="display:none;"></audio>
+
+<script type="module">
+    import { uploadAudio } from './src/services/audioService.js';
+
+    const form = document.getElementById('audioForm');
+    const statusEl = document.getElementById('status');
+    const player = document.getElementById('player');
+
+    form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const file = document.getElementById('audioFile').files[0];
+    const author = document.getElementById('author').value.trim();
+    const title = document.getElementById('title').value.trim();
+    const singer = document.getElementById('singer').value.trim();
+
+    statusEl.textContent = "Subiendo canción, espera un momento... 🎵";
+
+    const result = await uploadAudio(file, author, title, singer);
+
+    if (result.success) {
+        statusEl.textContent = result.message;
+        player.src = result.url;
+        player.style.display = "block";
+    } else {
+        statusEl.textContent = result.message;
+    }
+    });
+</script>
+</body>
+</html>

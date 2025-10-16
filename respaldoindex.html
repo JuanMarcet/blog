@@ -73,7 +73,7 @@
 </head>
 <body>
   <div class="container">
-    <h1>💬 Comentarios en tiempo real</h1>
+    <h1> Comentarios en tiempo real</h1>
 
     <form id="commentForm">
       <input type="text" id="authorInput" placeholder="Tu nombre" required />
@@ -87,7 +87,7 @@
   <script type="module">
     import { addComment, subscribeToComments } from './src/services/commentService.js';
 
-    // 🔧 Identificador de prueba (puede ser un ID de publicación real o fijo)
+    // Identificador de prueba (puede ser un ID de publicación real o fijo)
     const postId = "post-demo";
 
     const form = document.getElementById('commentForm');
@@ -95,7 +95,7 @@
     const textInput = document.getElementById('textInput');
     const commentsContainer = document.getElementById('commentsContainer');
 
-    // 🔄 Suscribirse a los comentarios en tiempo real
+
     subscribeToComments(postId, (comments) => {
       commentsContainer.innerHTML = ""; // Limpia los comentarios anteriores
       comments.forEach(comment => {
@@ -132,6 +132,6 @@
     <p>Hola <strong> Vite</strong>, ponte pilas con el deseño todo binito, revisa la carpeta llamada <strong>"<a href="avances.html" style="text-decoration: none; color:black">avances.html</a>"</strong> que es donde voy a estar registrando lo que voy avanzando con el tema de la base de datos, comentarios y demás.</p>
     <br>
     <a href="avances.html">Ir a avances</a> 
-    <a href="subir-audios.html">subir audios</a>
+    <a href="subir-audios.html"> subir audios</a>
 </body>
 </html>
