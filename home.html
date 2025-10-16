@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="home-body">
+  <!-- NAVBAR -->
+  <header class="navbar glass">
+    <h1 class="logo">Focus</h1>
+    <nav>
+      <a href="#" class="active">Inicio</a>
+      <a href="#">Discusión</a>
+      <a href="#">Categorías</a>
+      <a href="#">Autores</a>
+      <button class="btn logout" onclick="logout()">Cerrar Sesión</button>
+    </nav>
+  </header>
+
+  <!-- CONTENEDOR PRINCIPAL -->
+<!-- <main class="content-container"> -->
+  <!-- NAV SUPERIOR INTERNA -->
+  <!-- <nav class="sub-nav">
+    <a href="#" onclick="showSection('inicio')" class="active">Inicio</a>
+    <a href="#" onclick="showSection('discusion')">Discusión</a>
+    <a href="#" onclick="showSection('categorias')">Categorías</a>
+    <a href="#" onclick="showSection('autores')">Autores</a>
+  </nav> -->
+
+  <!-- SECCIONES -->
+  <section id="inicio" class="feed section active"></section>
+  <section id="discusion" class="feed section"></section>
+  <section id="categorias" class="feed section"></section>
+  <section id="autores" class="feed section"></section>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <h4>Comunidades Destacadas</h4>
+    <ul>
+      <li><span class="dot azul"></span> Tecnología</li>
+      <li><span class="dot rosa"></span> Cine</li>
+      <li><span class="dot verde"></span> Consejos</li>
+    </ul>
+    <button class="btn crear" onclick="openModal()">Crear Publicación</button>
+  </aside>
+</main>
+
+  <!-- MODAL CREAR PUBLICACIÓN -->
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <h3>Crear Publicación</h3>
+    <input type="text" id="postTitle" placeholder="Título de la publicación">
+    <input type="text" id="postTag" placeholder="Etiqueta (ej. CREATIVIDAD, DEBATE)">
+    <textarea id="postContent" placeholder="Escribe tu publicación aquí..."></textarea>
+
+    <div class="modal-buttons">
+      <button class="btn-primary" onclick="addPost()">Publicar</button>
+      <button class="btn-secondary" onclick="closeModal()">Cancelar</button>
+    </div>
+  </div>
+</div>
+  <footer>
+    <p>Aviso Legal | Política de Privacidad | © 2025 Focus</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
