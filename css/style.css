@@ -1,0 +1,569 @@
+/* Estilos generales para el body */
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background-color: #ebebeb;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 15px 40px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 95%;
+}
+
+.logo {
+    color: #00c2b2;
+    font-weight: 700; /* Añadido para mayor énfasis */
+}
+
+.navbar a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s ease; /* Añadido para consistencia con otras secciones */
+}
+
+.btn {
+    background: #00c2b2;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease; /* Añadido para transiciones suaves */
+}
+
+.btn.logout {
+    background: #ff5858;
+}
+
+/* Hero */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px;
+    background: white;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+.hero img {
+    max-width: 400px;
+    border-radius: 10px;
+}
+
+.hero-text h2 {
+    font-size: 2em;
+    font-weight: 600; /* Añadido para mejor legibilidad */
+}
+
+/* Blog cards */
+.blog {
+    text-align: center;
+    margin: 40px;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 250px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Etiquetas unificadas (de blog cards y home) */
+.tag {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 0.8em;
+    color: white;
+    font-weight: 600; /* Añadido para consistencia */
+}
+
+.azul { background: #007bff; }
+.verde { background: #00c853; }
+.celeste { background: #00bcd4; }
+.rojo { background: #f44336; }
+.naranja { background: #ff9800; }
+.tag.debate { background: #ff6b6b; } /* De home */
+.tag.creatividad { background: #ffb347; } /* De home */
+.tag.productividad { background: #00c2b2; } /* De home */
+
+/* --- LOGIN --- */
+.login-body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #00c2b2, #007bff);
+    font-family: "Poppins", sans-serif;
+}
+
+.login-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.login-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    padding: 50px 40px;
+    width: 350px;
+    text-align: center;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+.login-logo {
+    font-size: 2em;
+    color: #00c2b2;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.login-title {
+    font-size: 1em;
+    color: #333;
+    margin-bottom: 25px;
+    font-weight: 500; /* Añadido para legibilidad */
+}
+
+.login-form input {
+    width: 90%;
+    padding: 12px 15px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 0.95em;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.login-form input:focus {
+    border-color: #00c2b2;
+    box-shadow: 0 0 5px rgba(0, 194, 178, 0.5);
+}
+
+.btn-primary {
+    width: 100%;
+    padding: 12px;
+    background: #00c2b2;
+    border: none;
+    color: white;
+    border-radius: 10px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: 0.3s ease;
+    margin-top: 10px;
+}
+
+.btn-primary:hover {
+    background: #009e92;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    width: 100%;
+    padding: 12px;
+    background: #f0f0f0;
+    border: none;
+    color: #333;
+    border-radius: 10px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: 0.3s ease;
+    margin-top: 10px;
+}
+
+.btn-secondary:hover {
+    background: #e0e0e0;
+    transform: translateY(-2px);
+}
+
+.login-message {
+    margin-top: 15px;
+    font-size: 0.9em;
+    font-weight: 500;
+}
+
+.login-footer {
+    margin-top: 30px;
+    font-size: 0.8em;
+    color: #777;
+}
+
+/* Animación */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsivo para login */
+@media (max-width: 768px) { /* Cambiado a 768px para estándar mobile */
+    .login-card {
+        width: 90%;
+        padding: 40px 20px;
+    }
+}
+
+/* --- HOME --- */
+.home-body {
+    background-color: #f7f9fb;
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding-top: 100px;
+}
+
+/* Navbar para home */
+.navbar.glass {
+    position: fixed;
+    top: 0;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    z-index: 1000;
+}
+
+.navbar nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #444;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+.navbar nav a.active,
+.navbar nav a:hover {
+    color: #00c2b2;
+}
+
+/* Layout principal */
+.content-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    margin: 30px auto;
+    max-width: 1100px;
+    padding: 0 20px;
+}
+
+/* Feed */
+.feed {
+    flex: 2;
+}
+
+.post {
+    background: #fff;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.post:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Votación */
+.vote {
+    text-align: center;
+    color: #777;
+}
+
+.vote .arrow {
+    display: block;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.vote .arrow:hover {
+    transform: scale(1.2);
+}
+
+.vote p {
+    margin: 5px 0 0;
+    font-weight: 600;
+}
+
+/* Información del post */
+.post-info h3 {
+    margin: 0 0 5px;
+    font-size: 1.1em;
+    color: #222;
+}
+
+.post-info .meta {
+    font-size: 0.9em;
+    color: #777;
+}
+
+.post-info .meta span {
+    margin-right: 5px;
+}
+
+/* Sidebar */
+.sidebar {
+    flex: 1;
+    background: #fff;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    height: fit-content;
+}
+
+.sidebar h4 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px;
+}
+
+.sidebar li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    color: #555;
+}
+
+.sidebar .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.dot.azul { background: #007bff; }
+.dot.rosa { background: #ff4081; }
+.dot.verde { background: #00c853; }
+
+.btn.crear {
+    width: 100%;
+    background: #ff5858;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.btn.crear:hover {
+    background: #e64a4a;
+    transform: translateY(-2px);
+}
+
+/* Responsivo para home */
+@media (max-width: 900px) {
+    .content-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .sidebar {
+        width: 100%;
+        max-width: 400px;
+    }
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #fff;
+    margin-top: 40px;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* --- MODAL --- */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    animation: popIn 0.3s ease;
+}
+
+.modal-content h3 {
+    margin-top: 0;
+    color: #00c2b2;
+}
+
+.modal-content input,
+.modal-content textarea {
+    width: 95%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-family: "Poppins", sans-serif;
+    font-size: 0.9em;
+}
+
+.modal-content textarea {
+    min-height: 120px;
+    resize: none;
+}
+
+.modal-buttons {
+    text-align: right;
+    margin-top: 10px;
+}
+
+@keyframes popIn {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* --- SUBNAV INTERNA --- */
+.sub-nav {
+    display: flex;
+    justify-content: center;
+    background: #fff;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 70px;
+    z-index: 999;
+}
+
+.sub-nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.sub-nav a:hover,
+.sub-nav a.active {
+    color: #00c2b2;
+}
+
+.section {
+    display: none;
+}
+
+.section.active {
+    display: block;
+}
+/* --- COMENTARIOS --- */
+.comments {
+    margin-top: 10px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.comment {
+    background: #fff;
+    border-radius: 8px;
+    padding: 8px 10px;
+    margin: 5px 0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.comment span {
+    font-weight: bold;
+    color: #00c2b2;
+}
+
+.comment-input {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.comment-input input {
+    flex: 1;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.comment-input button {
+    background: #00c2b2;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.comment-input button:hover {
+    background: #009c93;
+}
+
+/* --- Animaciones globales --- */
+.fade-in {
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeIn 0.4s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Suaviza los cambios entre secciones */
+.section-transition {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
