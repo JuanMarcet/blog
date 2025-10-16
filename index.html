@@ -87,7 +87,7 @@
   <script type="module">
     import { addComment, subscribeToComments } from './src/services/commentService.js';
 
-    // 🔧 Identificador de prueba (puede ser un ID de publicación real o fijo)
+    // Identificador de prueba (puede ser un ID de publicación real o fijo)
     const postId = "post-demo";
 
     const form = document.getElementById('commentForm');
@@ -95,7 +95,7 @@
     const textInput = document.getElementById('textInput');
     const commentsContainer = document.getElementById('commentsContainer');
 
-    // 🔄 Suscribirse a los comentarios en tiempo real
+    //  Suscribirse a los comentarios en tiempo real
     subscribeToComments(postId, (comments) => {
       commentsContainer.innerHTML = ""; // Limpia los comentarios anteriores
       comments.forEach(comment => {
@@ -110,7 +110,7 @@
       });
     });
 
-    // ✉️ Publicar comentario
+    // Publicar comentario
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const author = authorInput.value.trim();
