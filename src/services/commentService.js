@@ -38,7 +38,7 @@ export async function addComment(postId, author, text) {
 
 
 // =======================================================
-// 2. READ (Tarea REAL-02)
+// 2. READ 
 // =======================================================
 /**
  * Se suscribe a los comentarios de un post para actualizaciones en tiempo real.
@@ -54,13 +54,13 @@ export function subscribeToComments(postId, callback) {
         orderBy("timestamp", "asc")
     );
 
-    // 2. onSnapshot: Abre la conexión en tiempo real.
+    //  Abre la conexión en tiempo real.
     const unsubscribe = onSnapshot(commentsQuery, (querySnapshot) => {
         const comments = [];
         querySnapshot.forEach((doc) => {
             const data = doc.data();
 
-            // Si el timestamp existe, conviértelo a fecha y hora legible
+            // Si el timestamp existe, lo convierte a formato legible
             let fechaFormateada = 'Ahora';
             if (data.timestamp) {
                 const fecha = data.timestamp.toDate();

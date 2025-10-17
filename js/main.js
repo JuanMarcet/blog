@@ -1,7 +1,7 @@
 // js/main.js
 
 // =======================================================
-// 1. IMPORTACIONES DE MÓDULOS DE SERVICIO Y DATOS
+// IMPORTACIONES DE MÓDULOS DE SERVICIO Y DATOS
 // =======================================================
 import { addComment, subscribeToComments } from '../src/services/commentService.js';
 // IMPORTACIÓN DE MÚSICA AÑADIDA
@@ -168,8 +168,6 @@ function showSection(sectionId) {
 // Hacemos la función global para que el HTML pueda acceder a ella
 window.showSection = showSection;
 
-// ... [Código de renderComments y handleCommentSubmit] ...
-
 /**
  * Función que recibe los comentarios de Firebase y actualiza la interfaz.
  */
@@ -205,13 +203,13 @@ async function handleCommentSubmit() {
     
     // Validaciones de Frontend
     if (!author || !text) {
-        messageArea.textContent = '🛑 Tu nombre y comentario son obligatorios.';
+        messageArea.textContent = 'Tu nombre y comentario son obligatorios.';
         messageArea.style.color = 'red';
         return;
     }
     
     submitButton.disabled = true;
-    messageArea.textContent = '⏳ Publicando...';
+    messageArea.textContent = 'Publicando...';
     messageArea.style.color = 'blue';
 
     // Llamada a tu servicio de datos (CREATE)
@@ -219,10 +217,10 @@ async function handleCommentSubmit() {
 
     if (result.success) {
         textInput.value = ''; // Limpiar solo el campo de comentario
-        messageArea.textContent = '✅ Comentario publicado con éxito!';
+        messageArea.textContent = 'Comentario publicado con éxito!';
         messageArea.style.color = 'green';
     } else {
-        messageArea.textContent = '❌ Error al publicar: ' + result.message;
+        messageArea.textContent = 'Error al publicar: ' + result.message;
         messageArea.style.color = 'red';
     }
     
@@ -231,7 +229,7 @@ async function handleCommentSubmit() {
 
 
 // =======================================================
-// 3. INICIALIZACIÓN (Función principal que se ejecuta al cargar)
+// 3. INICIALIZACIÓN 
 // =======================================================
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Obtiene las referencias del DOM para los comentarios
@@ -255,14 +253,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 // ----------------------------------------------------------------
-// [Funciones del compañero]
+// Funcion de modales
 // ----------------------------------------------------------------
 function logout() { console.log('Cerrar Sesión...'); }
 function openModal() { document.getElementById('modal').style.display = 'flex'; }
 function closeModal() { document.getElementById('modal').style.display = 'none'; }
 function addPost() { console.log('Añadir publicación...'); }
 
-// Las hacemos globales para que el HTML pueda acceder a ellas
+// variables globales para modales
 window.logout = logout;
 window.openModal = openModal;
 window.closeModal = closeModal;

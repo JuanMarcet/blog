@@ -1,4 +1,4 @@
-// --- LOGIN Y REGISTRO ---
+
 
 // Evitar bucle si ya está logueado
 window.addEventListener("load", () => {

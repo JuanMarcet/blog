@@ -210,6 +210,12 @@ body {
     color: #777;
 }
 
+.comunicado{
+    color: rgb(144, 31, 0);
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
 /* Animación */
 @keyframes fadeIn {
     from {
