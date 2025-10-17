@@ -35,5 +35,13 @@ proyecto_focus/
         └── commentService.js # Capa de abstracción para la DB (Firestore)
 </pre>
 
-<h3>Tecnologías y Servicios</h3>
+<h3>Tecnologías y Servicios</h3> 
+<br>
+<strong>Frontend: </strong> HTML5, CSS3, JavaScript (Módulos ES). <br> <br>
+
+<strong>Base de Datos:</strong> Firebase Cloud Firestore para la gestion de comentarios. <br>
+
+<strong> Alojamiento: </strong> Netlify para el hosting del Frontend y Archivos estáticos. <br>
+
+<strong> Alojamiento de archivos: </strong> Netlify/GitHub Assets (Reemplazando Google Drive por estabilidad en streaming). <br>
 
