@@ -1,70 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="home-body">
-  <!-- NAVBAR -->
-  <header class="navbar glass">
-    <h1 class="logo">Focus</h1>
-    <nav>
-      <a href="#" class="active">Inicio</a>
-      <a href="#">Discusión</a>
-      <a href="#">Categorías</a>
-      <a href="#">Autores</a>
-      <button class="btn logout" onclick="logout()">Cerrar Sesión</button>
-    </nav>
-  </header>
+    <header class="navbar glass">
+    <h1 class="logo">Focus</h1>
+<nav>
+  <a href="#" onclick="showSection('inicio')" class="active">Inicio</a> 
+  <a href="#" onclick="showSection('discusion')">Discusión</a> 
+  <a href="#" onclick="showSection('categorias')">Categorías</a>
+  <a href="#" onclick="showSection('autores')">Autores</a>
+  </nav>  </header>
 
-  <!-- CONTENEDOR PRINCIPAL -->
-<!-- <main class="content-container"> -->
-  <!-- NAV SUPERIOR INTERNA -->
-  <!-- <nav class="sub-nav">
-    <a href="#" onclick="showSection('inicio')" class="active">Inicio</a>
-    <a href="#" onclick="showSection('discusion')">Discusión</a>
-    <a href="#" onclick="showSection('categorias')">Categorías</a>
-    <a href="#" onclick="showSection('autores')">Autores</a>
-  </nav> -->
+      <section id="inicio" class="feed section active"></section>
+<section id="discusion" class="feed section">
+    <div class="post-detail">
+        <span class="tag verde" style="margin-top:20px ;">INSPIRA</span>
+        <h1>Cómo Afrontar la Creatividad en Tiempos de Crisis</h1>
+        <p class="post-meta">Por Ana García | 16 de Octubre, 2025</p>
+        <p>A veces, la presión de los plazos o el entorno complejo pueden paralizar la mente creativa. Pero es precisamente en la crisis donde nacen las ideas más innovadoras. La clave está en cambiar la perspectiva...</p>
+        </div>
+    
+    <div id="comment-form-container" class="comment-section">
+    <h3>Deja un Comentario</h3>
+    
+    <div class="comment-form-body">
+        
+        <div class="form-group">
+            <label for="author-input">Tu Nombre</label>
+            <input type="text" id="author-input" placeholder="Nombre (Requerido)" required>
+        </div>
 
-  <!-- SECCIONES -->
-  <section id="inicio" class="feed section active"></section>
-  <section id="discusion" class="feed section"></section>
-  <section id="categorias" class="feed section"></section>
-  <section id="autores" class="feed section"></section>
-
-  <!-- SIDEBAR -->
-  <aside class="sidebar">
-    <h4>Comunidades Destacadas</h4>
-    <ul>
-      <li><span class="dot azul"></span> Tecnología</li>
-      <li><span class="dot rosa"></span> Cine</li>
-      <li><span class="dot verde"></span> Consejos</li>
-    </ul>
-    <button class="btn crear" onclick="openModal()">Crear Publicación</button>
-  </aside>
-</main>
-
-  <!-- MODAL CREAR PUBLICACIÓN -->
-<div class="modal" id="modal">
-  <div class="modal-content">
-    <h3>Crear Publicación</h3>
-    <input type="text" id="postTitle" placeholder="Título de la publicación">
-    <input type="text" id="postTag" placeholder="Etiqueta (ej. CREATIVIDAD, DEBATE)">
-    <textarea id="postContent" placeholder="Escribe tu publicación aquí..."></textarea>
-
-    <div class="modal-buttons">
-      <button class="btn-primary" onclick="addPost()">Publicar</button>
-      <button class="btn-secondary" onclick="closeModal()">Cancelar</button>
-    </div>
-  </div>
+        <div class="form-group">
+            <label for="text-input">Tu Comentario</label>
+            <textarea id="text-input" placeholder="Escribe tu comentario..." rows="4" required></textarea>
+        </div>
+        
+        <button id="submit-button" class="btn-primary">Publicar</button>
+        <p id="message-area" class="login-message"></p>
+    </div>
 </div>
-  <footer>
-    <p>Aviso Legal | Política de Privacidad | © 2025 Focus</p>
-  </footer>
 
-  <script src="js/main.js"></script>
+    <div class="comment-section">
+        <h2>Comentarios (<span id="comment-count">0</span>)</h2>
+        <div id="comments-list">
+            Cargando comentarios...
+        </div>
+    </div>
+</section>  <section id="categorias" class="feed section"></section>
+  <section id="autores" class="feed section"></section>
+
+    <aside class="sidebar">
+    <h4>Comunidades Destacadas</h4>
+    <ul>
+      <li><span class="dot azul"></span> Tecnología</li>
+      <li><span class="dot rosa"></span> Cine</li>
+      <li><span class="dot verde"></span> Consejos</li>
+    </ul>
+    <button class="btn crear" onclick="openModal()">Crear Publicación</button>
+  </aside>
+  <div class="modal" id="modal">
+  <div class="modal-content">
+    <h3>Crear Publicación</h3>
+    <input type="text" id="postTitle" placeholder="Título de la publicación">
+    <input type="text" id="postTag" placeholder="Etiqueta (ej. CREATIVIDAD, DEBATE)">
+    <textarea id="postContent" placeholder="Escribe tu publicación aquí..."></textarea>
+
+    <div class="modal-buttons">
+      <button class="btn-primary" onclick="addPost()">Publicar</button>
+      <button class="btn-secondary" onclick="closeModal()">Cancelar</button>
+    </div>
+  </div>
+</div>
+
+<div id="floating-player">
+    <h4>🎶 Música Focus</h4>
+
+    <select id="music-selector"></select>
+    
+    <div id="progress-container">
+        <div id="time-display">0:00 / 0:00</div>
+        <input type="range" id="progress-bar" value="0" min="0" max="100">
+    </div>
+
+    <div id="controls-buttons">
+        <button id="rewind-button" title="Retroceder 10s">⏮️</button>
+        <button id="toggle-play-button">▶️</button>
+        <button id="forward-button" title="Adelantar 10s">⏭️</button>
+    </div>
+</div>
+
+<audio id="blog-audio" loop></audio>
+ 
+  <footer>
+    <p>Aviso Legal | Política de Privacidad | © 2025 Focus</p>
+  </footer>
+
+<script src="js/main.js" type="module"></script>
 </body>
 </html>
